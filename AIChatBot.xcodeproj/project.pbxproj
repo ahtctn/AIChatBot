@@ -13,6 +13,10 @@
 		7BAEBD342A7291F000F26142 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BAEBD322A7291F000F26142 /* Main.storyboard */; };
 		7BAEBD362A7291F100F26142 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BAEBD352A7291F100F26142 /* Assets.xcassets */; };
 		7BAEBD392A7291F100F26142 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BAEBD372A7291F100F26142 /* LaunchScreen.storyboard */; };
+		7BAEBD422A7292CC00F26142 /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7BAEBD412A7292CC00F26142 /* OpenAISwift */; };
+		7BAEBD4C2A72A52F00F26142 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAEBD4B2A72A52F00F26142 /* Constants.swift */; };
+		7BAEBD562A72BAA000F26142 /* ChatBotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAEBD552A72BAA000F26142 /* ChatBotViewModel.swift */; };
+		7BAEBD7A2A72C78400F26142 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAEBD792A72C78400F26142 /* APICaller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,9 @@
 		7BAEBD352A7291F100F26142 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7BAEBD382A7291F100F26142 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7BAEBD3A2A7291F100F26142 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7BAEBD4B2A72A52F00F26142 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7BAEBD552A72BAA000F26142 /* ChatBotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotViewModel.swift; sourceTree = "<group>"; };
+		7BAEBD792A72C78400F26142 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BAEBD422A7292CC00F26142 /* OpenAISwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +64,74 @@
 		7BAEBD2B2A7291F000F26142 /* AIChatBot */ = {
 			isa = PBXGroup;
 			children = (
-				7BAEBD2C2A7291F000F26142 /* AppDelegate.swift */,
-				7BAEBD2E2A7291F000F26142 /* SceneDelegate.swift */,
-				7BAEBD302A7291F000F26142 /* ViewController.swift */,
-				7BAEBD322A7291F000F26142 /* Main.storyboard */,
+				7BAEBD782A72C77B00F26142 /* NetworkManager */,
+				7BAEBD542A72BA5600F26142 /* ViewModel */,
+				7BAEBD442A7292E000F26142 /* View */,
+				7BAEBD4A2A72A52500F26142 /* Constants */,
+				7BAEBD432A7292D500F26142 /* Delegation */,
 				7BAEBD352A7291F100F26142 /* Assets.xcassets */,
-				7BAEBD372A7291F100F26142 /* LaunchScreen.storyboard */,
 				7BAEBD3A2A7291F100F26142 /* Info.plist */,
 			);
 			path = AIChatBot;
+			sourceTree = "<group>";
+		};
+		7BAEBD432A7292D500F26142 /* Delegation */ = {
+			isa = PBXGroup;
+			children = (
+				7BAEBD2C2A7291F000F26142 /* AppDelegate.swift */,
+				7BAEBD2E2A7291F000F26142 /* SceneDelegate.swift */,
+			);
+			path = Delegation;
+			sourceTree = "<group>";
+		};
+		7BAEBD442A7292E000F26142 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7BAEBD322A7291F000F26142 /* Main.storyboard */,
+				7BAEBD372A7291F100F26142 /* LaunchScreen.storyboard */,
+				7BAEBD462A7292F000F26142 /* Cells */,
+				7BAEBD452A7292EC00F26142 /* Controller */,
+				7BAEBD302A7291F000F26142 /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7BAEBD452A7292EC00F26142 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7BAEBD462A7292F000F26142 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		7BAEBD4A2A72A52500F26142 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				7BAEBD4B2A72A52F00F26142 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		7BAEBD542A72BA5600F26142 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7BAEBD552A72BAA000F26142 /* ChatBotViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7BAEBD782A72C77B00F26142 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				7BAEBD792A72C78400F26142 /* APICaller.swift */,
+			);
+			path = NetworkManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +150,9 @@
 			dependencies = (
 			);
 			name = AIChatBot;
+			packageProductDependencies = (
+				7BAEBD412A7292CC00F26142 /* OpenAISwift */,
+			);
 			productName = AIChatBot;
 			productReference = 7BAEBD292A7291F000F26142 /* AIChatBot.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +181,9 @@
 				Base,
 			);
 			mainGroup = 7BAEBD202A7291F000F26142;
+			packageReferences = (
+				7BAEBD402A7292CC00F26142 /* XCRemoteSwiftPackageReference "OpenAISwift" */,
+			);
 			productRefGroup = 7BAEBD2A2A7291F000F26142 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,7 +211,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BAEBD4C2A72A52F00F26142 /* Constants.swift in Sources */,
+				7BAEBD7A2A72C78400F26142 /* APICaller.swift in Sources */,
 				7BAEBD312A7291F000F26142 /* ViewController.swift in Sources */,
+				7BAEBD562A72BAA000F26142 /* ChatBotViewModel.swift in Sources */,
 				7BAEBD2D2A7291F000F26142 /* AppDelegate.swift in Sources */,
 				7BAEBD2F2A7291F000F26142 /* SceneDelegate.swift in Sources */,
 			);
@@ -358,6 +434,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7BAEBD402A7292CC00F26142 /* XCRemoteSwiftPackageReference "OpenAISwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/adamrushy/OpenAISwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7BAEBD412A7292CC00F26142 /* OpenAISwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7BAEBD402A7292CC00F26142 /* XCRemoteSwiftPackageReference "OpenAISwift" */;
+			productName = OpenAISwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7BAEBD212A7291F000F26142 /* Project object */;
 }
